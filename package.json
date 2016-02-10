@@ -1,6 +1,6 @@
 {
   "name": "apiary-gen",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "used to generate an apiary api based on swagger doc.",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "swagger"
   ],
   "author": "jordan piepkow",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/SmarterServices/hapi-swagger-apiary/issues"
   },
