@@ -1,0 +1,297 @@
+{
+  "swagger": "2.0",
+  "paths": {
+    "/v1": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/response_blurosihoweihf_get_200"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response_blurosihoweihf_get_400"
+            }
+          }
+        },
+        "summary": "health",
+        "tags": [
+          "v1"
+        ],
+        "operationId": "blurosihoweihf",
+        "description": "This route is used for a health check"
+      }
+    },
+    "/v1/application/{application_id}/inform": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/inform"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response_v1applicationapplication_idinform_get_400"
+            }
+          }
+        },
+        "summary": "inform",
+        "tags": [
+          "v1"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "name": "application_id"
+          },
+          {
+            "in": "query",
+            "type": "string",
+            "name": "actor_id"
+          },
+          {
+            "in": "query",
+            "type": "string",
+            "name": "subject_id"
+          },
+          {
+            "in": "query",
+            "type": "string",
+            "name": "origin"
+          }
+        ],
+        "operationId": "v1applicationapplication_idinform",
+        "description": "This is the inform endpoint"
+      }
+    },
+    "/v1/applications/{application_id}/embed": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/response_v1applicationsapplication_idembed_get_200"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response_v1applicationsapplication_idembed_get_400"
+            }
+          }
+        },
+        "summary": "embed",
+        "tags": [
+          "v1"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "name": "application_id"
+          },
+          {
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "name": "subject_id"
+          },
+          {
+            "in": "query",
+            "type": "string",
+            "name": "button_text"
+          },
+          {
+            "in": "query",
+            "type": "string",
+            "name": "header_text"
+          },
+          {
+            "in": "query",
+            "type": "string",
+            "name": "element_id"
+          }
+        ],
+        "operationId": "v1applicationsapplication_idembed",
+        "description": "This is the embed endpoint"
+      }
+    },
+    "/v1/application/{application_id}/observe": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/response_v1applicationapplication_idobserve_post_200"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response_v1applicationapplication_idobserve_post_400"
+            }
+          }
+        },
+        "summary": "Observe",
+        "tags": [
+          "v1"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "name": "application_id"
+          },
+          {
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/parameters_v1applicationapplication_idobserve_post"
+            },
+            "name": "body"
+          }
+        ],
+        "operationId": "v1applicationapplication_idobserve",
+        "description": "This is the Observe endpoint route"
+      }
+    }
+  },
+  "tags": [],
+  "definitions": {
+    "health": {
+      "properties": {
+        "health": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "response_blurosihoweihf_get_200": {
+      "type": "object",
+      "$ref": "#/definitions/health"
+    },
+    "createError": {
+      "properties": {
+        "err": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "response_blurosihoweihf_get_400": {
+      "type": "object",
+      "$ref": "#/definitions/createError"
+    },
+    "inform": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "response_v1applicationapplication_idinform_get_400": {
+      "type": "object",
+      "$ref": "#/definitions/createError"
+    },
+    "embed": {
+      "properties": {
+        "embed_code": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "response_v1applicationsapplication_idembed_get_200": {
+      "type": "object",
+      "$ref": "#/definitions/embed"
+    },
+    "response_v1applicationsapplication_idembed_get_400": {
+      "type": "object",
+      "$ref": "#/definitions/createError"
+    },
+    "parameters_v1applicationapplication_idobserve_post": {
+      "properties": {
+        "actor_id": {
+          "type": "string"
+        },
+        "actor": {
+          "type": "string"
+        },
+        "subject_id": {
+          "type": "string"
+        },
+        "origin": {
+          "type": "string"
+        },
+        "origin_details": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "data": {
+          "type": "string"
+        },
+        "meta_data": {
+          "type": "string"
+        },
+        "action_time": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "actor_id",
+        "actor",
+        "subject_id",
+        "origin",
+        "origin_details",
+        "action",
+        "label",
+        "description",
+        "data",
+        "meta_data",
+        "action_time"
+      ],
+      "type": "object"
+    },
+    "Observe": {
+      "properties": {
+        "logged": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "response_v1applicationapplication_idobserve_post_200": {
+      "type": "object",
+      "$ref": "#/definitions/Observe"
+    },
+    "response_v1applicationapplication_idobserve_post_400": {
+      "type": "object",
+      "$ref": "#/definitions/createError"
+    }
+  },
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "host": "localhost:8000",
+  "info": {
+    "title": "Incident Reporting Api",
+    "version": "0.0.11"
+  }
+}

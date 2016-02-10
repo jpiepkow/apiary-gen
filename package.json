@@ -1,0 +1,27 @@
+{
+  "name": "apiary-gen",
+  "version": "1.0.1",
+  "description": "used to generate an apiary api based on swagger doc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SmarterServices/hapi-swagger-apiary.git"
+  },
+  "keywords": [
+    "apiary",
+    "api",
+    "swagger"
+  ],
+  "author": "jordan piepkow",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SmarterServices/hapi-swagger-apiary/issues"
+  },
+  "homepage": "https://github.com/SmarterServices/hapi-swagger-apiary#readme",
+  "dependencies": {
+    "request": "^2.69.0"
+  }
+}
