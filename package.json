@@ -1,6 +1,6 @@
 {
   "name": "apiary-gen",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "used to generate an apiary api based on swagger doc.",
   "main": "index.js",
   "scripts": {
